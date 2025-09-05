@@ -18,15 +18,15 @@ DBD += evg.dbd
 
 # evg.dbd will be made up from these files:
 evg_DBD += base.dbd
-
-# Include dbd files from all support applications:
-#evg_DBD += xxx.dbd
+evg_DBD += feed.dbd
+evg_DBD += copyTime.dbd
 
 # Add all the support libraries needed by this IOC
-#evg_LIBS += xxx
+evg_LIBS += feed
 
 # evg_registerRecordDeviceDriver.cpp derives from evg.dbd
 evg_SRCS += evg_registerRecordDeviceDriver.cpp
+evg_SRCS += copyTime.c
 
 # Build the main IOC entry point on workstation OSs.
 evg_SRCS_DEFAULT += evgMain.cpp
