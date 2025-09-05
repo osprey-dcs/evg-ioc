@@ -1,0 +1,6 @@
+MODULES=feedcore
+
+FEEDCORE_REPOOWNER=osprey-dcs
+FEEDCORE_REPONAME=feed-core
+
+include defaults
