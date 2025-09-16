@@ -5,10 +5,26 @@
 # IPADDR - Device hostname / IP address, and optional port (default 50006)
 
 file "feed_base.template" {
-{NAME="\$(NAME)", PREF="\$(P)", ADDR="\$(IPADDR)"}
+{
+NAME="\$(NAME)", PREF="\$(P)", ADDR="\$(IPADDR)"}
+}
+
+file "perFPGA.template" {
+{ NAME="\$(NAME)", P="\$(P)"}
 }
 
 file "perBuildDate.template" {
 {NAME="\$(NAME)", P="\$(P)Date:FW-I", REG="firmwareBuildDate"}
 {NAME="\$(NAME)", P="\$(P)Date:SW-I", REG="softwareBuildDate"}
 }
+
+file "perSysmonLI.template" {
+  pattern { P,                             REG,   EGU,  LOLO,  LOW, HIGH, HIHI,     LLSV,      LSV,      HSV,     HHSV,  DESC }
+  { "\$(P)FPGA:powerUp_",      "FPGA:powerUp_",    "",     0,   0,    2,    2, NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM, "FPGA has powered up" }
+  { "\$(P)FPGA:uptime",           "FPGA:uptime",  "s",     0,   0,    0,    0, NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM, "FPGA uptime" }
+  { "\$(P)MGT:status",            "MGT:status",    "",     1,   0,    0,    0, NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM, "Bitmap of good MGT Rx" }
+  { "\$(P)Marble:VCXO:SR",    "Marble:VCXO:SR",    "",     0,   0,    0,    0, NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM, "Clock adjust status register" }
+  { "\$(P)Marble:VCXO:ASR",  "Marble:VCXO:ASR",    "",     0,   0,    0,    0, NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM, "Clock adjust auxiliary status register" }
+  { "\$(P)Marble:VCXO:PPS",  "Marble:VCXO:PPS",    "",     0,   0,    0,    0, NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM, "Clock adjust PPS status register" }
+}
+

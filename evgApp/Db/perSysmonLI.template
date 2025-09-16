@@ -1,0 +1,16 @@
+record(longin, "$(P)") {
+    field(DESC, "$(DESC)")
+    field(DTYP, "FEED Register Read")
+    field(INP,  "@name=$(NAME) reg=$(REG)")
+    field(SCAN, "2 second")
+    field(TSE,  "-2")
+    field(EGU,  "$(EGU)")
+    field(LOLO, "$(LOLO)")
+    field(LOW,  "$(LOW)")
+    field(HIGH, "$(HIGH)")
+    field(HIHI, "$(HIHI)")
+    field(LLSV, "$(LLSV)")
+    field(LSV,  "$(LSV)")
+    field(HSV,  "$(HSV)")
+    field(HHSV, "$(HHSV)")
+}

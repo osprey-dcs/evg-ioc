@@ -1,0 +1,9 @@
+record(longout, "$(P)") {
+    field(DESC, "$(DESC)")
+    field(DTYP, "FEED Register Write")
+    field(OUTP, "@name=$(NAME) reg=$(REG)")
+    field(LOPR, "$(LO)")
+    field(HOPR, "$(HI)")
+    field(DRVL, "$(LO)")
+    field(DRVL, "$(HI)")
+}
