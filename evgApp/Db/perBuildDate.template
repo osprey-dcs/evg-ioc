@@ -1,7 +1,7 @@
 # read build time once On Connect
 record(longin, "$(P):C_") {
     field(DTYP, "FEED On Connect")
-    field(INP , "@name=$(NAME)")
+    field(INP,  "@name=$(NAME)")
     field(SCAN, "I/O Intr")
     field(FLNK, "$(P)_")
 }
@@ -14,8 +14,8 @@ record(longin, "$(P)_") {
 }
 record(ai, "$(P):T_") {
     field(DTYP, "Copy VAL 2 TIME")
-    field(TSE , "-2")
-    field(INP , "$(P)_")
+    field(TSE,  "-2")
+    field(INP,  "$(P)_")
     field(FLNK, "$(P)")
 }
 record(stringin, "$(P)") {

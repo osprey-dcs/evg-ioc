@@ -18,6 +18,34 @@ file "perBuildDate.template" {
 {NAME="\$(NAME)", P="\$(P)Date:SW-I", REG="softwareBuildDate"}
 }
 
+file "perEVG.template" {
+pattern { P }
+  { "\$(P)" }
+}
+file "perEVGtimer.template" {
+pattern { P,  I }
+  { "\$(P)", "1" }
+  { "\$(P)", "2" }
+}
+file "perEVGhwTrigger.template" {
+pattern { P,  EDGE,   E,  I }
+  { "\$(P)", "rise", "r", 1 }
+  { "\$(P)", "fall", "f", 1 }
+  { "\$(P)", "rise", "r", 2 }
+  { "\$(P)", "fall", "f", 2 }
+  { "\$(P)", "rise", "r", 3 }
+  { "\$(P)", "fall", "f", 3 }
+  { "\$(P)", "rise", "r", 4 }
+  { "\$(P)", "fall", "f", 4 }
+}
+file "perEVGseqBank.template" {
+pattern { P,  I }
+  { "\$(P)",  1 }
+  { "\$(P)",  2 }
+  { "\$(P)",  3 }
+  { "\$(P)",  4 }
+}
+
 file "perSysmonLI.template" {
   pattern { P,                             REG,   EGU,  LOLO,  LOW, HIGH, HIHI,     LLSV,      LSV,      HSV,     HHSV,  DESC }
   { "\$(P)FPGA:powerUp_",      "FPGA:powerUp_",    "",     0,   0,    2,    2, NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM, "FPGA has powered up" }

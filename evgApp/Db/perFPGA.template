@@ -1,7 +1,7 @@
 record(bo, "$(P)PPS:Local") {
     field(DESC, "Enable/Disable local PPS marker")
     field(DTYP, "FEED Register Write")
-    field(OUT,  "@name=$(NAME), reg=MARBLE:PPS:LOCAL:CSR")
+    field(OUT,  "@name=$(NAME) reg=MARBLE:PPS:LOCAL:CSR")
     field(ZNAM, "Disable")
     field(ONAM, "Enable")
 }
