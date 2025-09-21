@@ -1,0 +1,31 @@
+record(bo, "$(P)EVR:TRIG:$(I):enable)") {
+    field(DESC, "Enable/disable hardware trigger $(I)")
+    field(DTYP, "FEED Register Write")
+    field(OUT,  "@name=$(NAME) reg=EVR:trg$(I):enable")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
+record(ao, "$(P)EVR:TRIG:$(I):delay)") {
+    field(DESC, "Amount to delay hardware trigger $(I)")
+    field(DTYP, "FEED Register Write")
+    field(OUT,  "@name=$(NAME) reg=EVR:trg$(I):delay")
+    field(EGU,  "EVR ticks")
+    field(LINR, "SLOPE")
+    field(ESLO, "8")
+    field(LOPR, "0")
+    field(HOPR, "536870912")
+    field(DRVL, "0")
+    field(DRVH, "536870912")
+}
+record(ao, "$(P)EVR:TRIG:$(I):width)") {
+    field(DESC, "Hardware trigger $(I) width")
+    field(DTYP, "FEED Register Write")
+    field(OUT,  "@name=$(NAME) reg=EVR:trg$(I):width")
+    field(EGU,  "EVR ticks")
+    field(LINR, "SLOPE")
+    field(ESLO, "8")
+    field(LOPR, "1")
+    field(HOPR, "536870912")
+    field(DRVL, "1")
+    field(DRVH, "536870912")
+}

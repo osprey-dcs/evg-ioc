@@ -9,5 +9,6 @@ evg_registerRecordDeviceDriver(pdbbase)
 
 dbLoadRecords("../../db/evgApp.db","P=$(P),NAME=EVG,IPADDR=$(EVG_IPV4)")
 dbLoadRecords("../../db/ospreyEVG.db","P=$(P),NAME=EVG")
+dbLoadRecords("../../db/ospreyEVR.db","P=$(P),NAME=EVR")
 
 iocInit()

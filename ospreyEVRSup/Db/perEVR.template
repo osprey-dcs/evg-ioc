@@ -1,0 +1,6 @@
+record(longin, "$(P)EVR:status") {
+    field(DESC, "EVR status register")
+    field(DTYP, "FEED Register Read")
+    field(INP, "@name=$(NAME) reg=EVR:status")
+    field(SCAN, "2 second")
+}
