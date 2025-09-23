@@ -4,11 +4,17 @@ record(longin, "$(P)EVG:status") {
     field(INP, "@name=$(NAME) reg=EVG:status")
     field(SCAN, "2 second")
 }
-record(longin, "$(P)EVG:seqStatus") {
-    field(DESC, "EVG sequencer status register")
+record(longin, "$(P)EVG:onConnect_") {
+    field(DESC, "Process records on FPGA connection")
+    field(DTYP, "FEED On Connect")
+    field(INP, "@name=$(NAME)")
+    field(SCAN, "I/O Intr")
+    field(FLNK, "$(P)EVG:config")
+}
+record(longin, "$(P)EVG:config") {
+    field(DESC, "EVG sequencer configuration")
     field(DTYP, "FEED Register Read")
-    field(INP, "@name=$(NAME) reg=EVG:seqStatus")
-    field(SCAN, "2 second")
+    field(INP, "@name=$(NAME) reg=EVG:config")
 }
 record(longout, "$(P)EVG:SEQ:arm") {
     field(DESC, "Bitmap of sequencer(s) to arm")
@@ -42,10 +48,10 @@ record(longout, "$(P)EVG:hbDivisor") {
     field(DTYP, "FEED Register Write")
     field(OUT,  "@name=$(NAME) reg=EVG:hbDivisor")
 }
-record(longout, "$(P)EVG:SEQ:swEvent") {
+record(longout, "$(P)EVG:swEvent") {
     field(DESC, "Event to send")
     field(DTYP, "FEED Register Write")
-    field(OUT,  "@name=$(NAME) reg=EVG:SEQ:swEvent")
+    field(OUT,  "@name=$(NAME) reg=EVG:swEvent")
     field(LOPR, "0")
     field(HOPR, "255")
     field(DRVL, "0")
