@@ -20,6 +20,7 @@ DBD += evg.dbd
 evg_DBD += base.dbd
 evg_DBD += feed.dbd
 evg_DBD += copyTime.dbd
+evg_DBD += goldenBoot.dbd
 
 # Add all the support libraries needed by this IOC
 evg_LIBS += feed
@@ -27,6 +28,7 @@ evg_LIBS += feed
 # evg_registerRecordDeviceDriver.cpp derives from evg.dbd
 evg_SRCS += evg_registerRecordDeviceDriver.cpp
 evg_SRCS += copyTime.c
+evg_SRCS += goldenBoot.c
 
 # Build the main IOC entry point on workstation OSs.
 evg_SRCS_DEFAULT += evgMain.cpp
