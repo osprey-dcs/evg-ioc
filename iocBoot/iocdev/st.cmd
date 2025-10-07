@@ -12,3 +12,4 @@ dbLoadRecords("../../db/ospreyEVG.db","P=$(P),NAME=EVG")
 dbLoadRecords("../../db/ospreyEVR.db","P=$(P),NAME=EVG")
 
 iocInit()
+dbpf EVG:GLD:autoboot 1
