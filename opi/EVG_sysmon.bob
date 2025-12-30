@@ -192,6 +192,11 @@
     <name>Action Button</name>
     <actions>
       <action type="open_display">
+        <description>PLL Monitors</description>
+        <file>EVG_pllmon.bob</file>
+        <target>tab</target>
+      </action>
+      <action type="open_display">
         <description>Reboot FPGA</description>
         <file>mpexACQ_FPGAreboot.bob</file>
         <target>window</target>
