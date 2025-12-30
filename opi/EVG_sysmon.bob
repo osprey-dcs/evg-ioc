@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>EVG System Monitors</name>
+  <x>8</x>
+  <y>88</y>
+  <width>600</width>
+  <height>800</height>
+  <background_color>
+    <color name="GLOBAL canvas" red="200" green="200" blue="200">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>$(P)</text>
+    <y>2</y>
+    <width>600</width>
+    <height>21</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="green-19" red="0" green="128" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>BuildDates</name>
+    <x>138</x>
+    <y>35</y>
+    <width>225</width>
+    <height>45</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>BuildDate</name>
+      <width>225</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_10</name>
+        <text>Firmware</text>
+        <width>70</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_11</name>
+        <pv_name>$(P)Date:FW-I</pv_name>
+        <x>75</x>
+        <width>140</width>
+        <transparent>true</transparent>
+        <format>6</format>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>BuildDate_1</name>
+      <y>22</y>
+      <width>225</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_14</name>
+        <text>Software</text>
+        <width>70</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_15</name>
+        <pv_name>$(P)Date:SW-I</pv_name>
+        <x>75</x>
+        <width>140</width>
+        <transparent>true</transparent>
+        <format>6</format>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>FPGAmon</name>
+    <x>9</x>
+    <y>100</y>
+    <width>255</width>
+    <height>95</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <width>255</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_7</name>
+        <text>FPGA Temperature</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_8</name>
+        <pv_name>$(P)FPGA:Temperature</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <y>25</y>
+      <width>255</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_11</name>
+        <text>FPGA VccINT</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_12</name>
+        <pv_name>$(P)FPGA:VccINT</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <y>50</y>
+      <width>255</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_8</name>
+        <text>FPGA VccAUX</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_9</name>
+        <pv_name>$(P)FPGA:VccAUX</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <y>75</y>
+      <width>255</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_9</name>
+        <text>FPGA VccVBRAM</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_10</name>
+        <pv_name>$(P)FPGA:VBRAM</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <description>Reboot FPGA</description>
+        <file>mpexACQ_FPGAreboot.bob</file>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>More...</text>
+    <x>474</x>
+    <y>57</y>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>MarbleP12mon</name>
+    <x>9</x>
+    <y>205</y>
+    <width>255</width>
+    <height>145</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>INA219val</name>
+      <y>50</y>
+      <width>255</width>
+      <height>15</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_30</name>
+        <pv_name>$(P)MARBLE:FMC1:P12V</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>INA219val</name>
+        <text>Marble FMC1 P12 V</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>INA219val_1</name>
+      <y>75</y>
+      <width>255</width>
+      <height>15</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_31</name>
+        <pv_name>$(P)MARBLE:FMC1:P12I</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>INA219val_2</name>
+        <text>Marble FMC1 P12 I</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>INA219val_5</name>
+      <y>100</y>
+      <width>255</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_33</name>
+        <pv_name>$(P)MARBLE:FMC2:P12V</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>INA219val_6</name>
+        <text>Marble FMC2 P12 V</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>INA219val_7</name>
+      <y>125</y>
+      <width>255</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_34</name>
+        <pv_name>$(P)MARBLE:FMC2:P12I</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>INA219val_8</name>
+        <text>Marble FMC2 P12 I</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>INA219val_9</name>
+      <width>255</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_35</name>
+        <pv_name>$(P)MARBLE:P12V</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>INA219val_10</name>
+        <text>Marble P12 V</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>INA219val_11</name>
+      <y>25</y>
+      <width>255</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_36</name>
+        <pv_name>$(P)MARBLE:P12I</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>INA219val_12</name>
+        <text>Marble P12 I</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>9</x>
+    <y>365</y>
+    <width>255</width>
+    <height>45</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>QSFPval</name>
+      <width>255</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_12</name>
+        <text>QSFP 1 Temperature</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_13</name>
+        <pv_name>$(P)QSFP1:Temperature</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>QSFPval</name>
+      <y>25</y>
+      <width>255</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_13</name>
+        <text>QSFP 1 Vcc</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_14</name>
+        <pv_name>$(P)QSFP1:Vcc</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>9</x>
+    <y>425</y>
+    <width>255</width>
+    <height>45</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>QSFPval_1</name>
+      <width>255</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_15</name>
+        <text>QSFP 2 Temperature</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_16</name>
+        <pv_name>$(P)QSFP2:Temperature</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>QSFPval_2</name>
+      <y>25</y>
+      <width>255</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_23</name>
+        <text>QSFP 2 Vcc</text>
+        <width>150</width>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_18</name>
+        <pv_name>$(P)QSFP2:Vcc</pv_name>
+        <x>155</x>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>388</x>
+    <y>120</y>
+    <width>172</width>
+    <height>233</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_39</name>
+      <text>
+Link</text>
+      <width>40</width>
+      <height>35</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_40</name>
+      <text>Rx Pwr
+(µW)</text>
+      <x>52</x>
+      <width>60</width>
+      <height>35</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_41</name>
+      <text>Latency
+(ns)</text>
+      <x>112</x>
+      <width>60</width>
+      <height>35</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>7</x>
+      <y>38</y>
+      <width>165</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_20</name>
+        <text>1</text>
+        <y>1</y>
+        <width>8</width>
+        <height>16</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_17</name>
+        <pv_name>$(P)QSFP1:RxPower1</pv_name>
+        <x>40</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_19</name>
+        <pv_name>$(P)EVG:LINK:1:latency</pv_name>
+        <x>105</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_8</name>
+        <pv_name>$(P)MGT:status</pv_name>
+        <x>15</x>
+        <width>20</width>
+        <numBits>1</numBits>
+        <square>true</square>
+        <off_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </off_color>
+        <on_color>
+          <color name="OK" red="0" green="255" blue="0">
+          </color>
+        </on_color>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_4</name>
+      <x>7</x>
+      <y>63</y>
+      <width>165</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_42</name>
+        <text>2</text>
+        <y>1</y>
+        <width>8</width>
+        <height>16</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_20</name>
+        <pv_name>$(P)QSFP1:RxPower2</pv_name>
+        <x>40</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_21</name>
+        <pv_name>$(P)EVG:LINK:2:latency</pv_name>
+        <x>105</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_9</name>
+        <pv_name>$(P)MGT:status</pv_name>
+        <x>15</x>
+        <width>20</width>
+        <startBit>1</startBit>
+        <numBits>1</numBits>
+        <square>true</square>
+        <off_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </off_color>
+        <on_color>
+          <color name="OK" red="0" green="255" blue="0">
+          </color>
+        </on_color>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_5</name>
+      <x>7</x>
+      <y>88</y>
+      <width>165</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_43</name>
+        <text>3</text>
+        <y>1</y>
+        <width>8</width>
+        <height>16</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_22</name>
+        <pv_name>$(P)QSFP1:RxPower3</pv_name>
+        <x>40</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_23</name>
+        <pv_name>$(P)EVG:LINK:3:latency</pv_name>
+        <x>105</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_10</name>
+        <pv_name>$(P)MGT:status</pv_name>
+        <x>15</x>
+        <width>20</width>
+        <startBit>2</startBit>
+        <numBits>1</numBits>
+        <square>true</square>
+        <off_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </off_color>
+        <on_color>
+          <color name="OK" red="0" green="255" blue="0">
+          </color>
+        </on_color>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_6</name>
+      <x>7</x>
+      <y>113</y>
+      <width>165</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_44</name>
+        <text>4</text>
+        <y>1</y>
+        <width>8</width>
+        <height>16</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_24</name>
+        <pv_name>$(P)QSFP1:RxPower4</pv_name>
+        <x>40</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_25</name>
+        <pv_name>$(P)EVG:LINK:4:latency</pv_name>
+        <x>105</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_11</name>
+        <pv_name>$(P)MGT:status</pv_name>
+        <x>15</x>
+        <width>20</width>
+        <startBit>3</startBit>
+        <numBits>1</numBits>
+        <square>true</square>
+        <off_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </off_color>
+        <on_color>
+          <color name="OK" red="0" green="255" blue="0">
+          </color>
+        </on_color>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_8</name>
+      <x>7</x>
+      <y>138</y>
+      <width>165</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_45</name>
+        <text>5</text>
+        <y>1</y>
+        <width>8</width>
+        <height>16</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_26</name>
+        <pv_name>$(P)QSFP2:RxPower1</pv_name>
+        <x>40</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_27</name>
+        <pv_name>$(P)EVG:LINK:5:latency</pv_name>
+        <x>105</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_12</name>
+        <pv_name>$(P)MGT:status</pv_name>
+        <x>15</x>
+        <width>20</width>
+        <startBit>4</startBit>
+        <numBits>1</numBits>
+        <square>true</square>
+        <off_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </off_color>
+        <on_color>
+          <color name="OK" red="0" green="255" blue="0">
+          </color>
+        </on_color>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_9</name>
+      <x>7</x>
+      <y>163</y>
+      <width>165</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_46</name>
+        <text>6</text>
+        <y>1</y>
+        <width>8</width>
+        <height>16</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_28</name>
+        <pv_name>$(P)QSFP2:RxPower2</pv_name>
+        <x>40</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_29</name>
+        <pv_name>$(P)EVG:LINK:6:latency</pv_name>
+        <x>105</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_13</name>
+        <pv_name>$(P)MGT:status</pv_name>
+        <x>15</x>
+        <width>20</width>
+        <startBit>5</startBit>
+        <numBits>1</numBits>
+        <square>true</square>
+        <off_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </off_color>
+        <on_color>
+          <color name="OK" red="0" green="255" blue="0">
+          </color>
+        </on_color>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_10</name>
+      <x>7</x>
+      <y>188</y>
+      <width>165</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_47</name>
+        <text>7</text>
+        <y>1</y>
+        <width>8</width>
+        <height>16</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_32</name>
+        <pv_name>$(P)QSFP2:RxPower3</pv_name>
+        <x>40</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_37</name>
+        <pv_name>$(P)EVG:LINK:7:latency</pv_name>
+        <x>105</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_14</name>
+        <pv_name>$(P)MGT:status</pv_name>
+        <x>15</x>
+        <width>20</width>
+        <startBit>6</startBit>
+        <numBits>1</numBits>
+        <square>true</square>
+        <off_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </off_color>
+        <on_color>
+          <color name="OK" red="0" green="255" blue="0">
+          </color>
+        </on_color>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_11</name>
+      <x>7</x>
+      <y>213</y>
+      <width>165</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_48</name>
+        <text>8</text>
+        <y>1</y>
+        <width>8</width>
+        <height>16</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_38</name>
+        <pv_name>$(P)QSFP2:RxPower4</pv_name>
+        <x>40</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_39</name>
+        <pv_name>$(P)EVG:LINK:8:latency</pv_name>
+        <x>105</x>
+        <width>60</width>
+        <format>1</format>
+        <precision>1</precision>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="byte_monitor" version="2.0.0">
+        <name>Byte Monitor_15</name>
+        <pv_name>$(P)MGT:status</pv_name>
+        <x>15</x>
+        <width>20</width>
+        <startBit>7</startBit>
+        <numBits>1</numBits>
+        <square>true</square>
+        <off_color>
+          <color name="Button_Background" red="210" green="210" blue="210">
+          </color>
+        </off_color>
+        <on_color>
+          <color name="OK" red="0" green="255" blue="0">
+          </color>
+        </on_color>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>470</x>
+    <y>370</y>
+    <width>86</width>
+    <height>80</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="byte_monitor" version="2.0.0">
+      <name>Byte Monitor_16</name>
+      <pv_name>$(P)Marble:VCXO:PPS</pv_name>
+      <x>66</x>
+      <y>20</y>
+      <width>20</width>
+      <height>60</height>
+      <startBit>28</startBit>
+      <numBits>3</numBits>
+      <horizontal>false</horizontal>
+      <square>true</square>
+      <off_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_49</name>
+      <text>PPS Markers</text>
+      <width>85</width>
+      <height>16</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_50</name>
+      <text>Fabric</text>
+      <x>17</x>
+      <y>19</y>
+      <width>45</width>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_52</name>
+      <text>PMOD</text>
+      <x>17</x>
+      <y>41</y>
+      <width>45</width>
+      <height>16</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_53</name>
+      <text>FMC</text>
+      <x>17</x>
+      <y>61</y>
+      <width>45</width>
+      <height>16</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+</display>
