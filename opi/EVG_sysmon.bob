@@ -3,8 +3,8 @@
   <name>EVG System Monitors</name>
   <x>8</x>
   <y>88</y>
-  <width>600</width>
-  <height>800</height>
+  <width>550</width>
+  <height>500</height>
   <background_color>
     <color name="GLOBAL canvas" red="200" green="200" blue="200">
     </color>
@@ -13,7 +13,7 @@
   <widget type="label" version="2.0.0">
     <name>EDM activeXTextClass</name>
     <text>$(P)</text>
-    <y>2</y>
+    <x>8</x>
     <width>600</width>
     <height>21</height>
     <font>
@@ -187,25 +187,6 @@
         <vertical_alignment>1</vertical_alignment>
       </widget>
     </widget>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
-    <actions>
-      <action type="open_display">
-        <description>PLL Monitors</description>
-        <file>EVG_pllmon.bob</file>
-        <target>tab</target>
-      </action>
-      <action type="open_display">
-        <description>Reboot FPGA</description>
-        <file>mpexACQ_FPGAreboot.bob</file>
-        <target>window</target>
-      </action>
-    </actions>
-    <text>More...</text>
-    <x>474</x>
-    <y>57</y>
-    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="group" version="3.0.0">
     <name>MarbleP12mon</name>
@@ -461,9 +442,28 @@
       </widget>
     </widget>
   </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <description>PLL Monitors</description>
+        <file>EVG_pllmon.bob</file>
+        <target>tab</target>
+      </action>
+      <action type="open_display">
+        <description>Reboot FPGA</description>
+        <file>mpexACQ_FPGAreboot.bob</file>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>More...</text>
+    <x>424</x>
+    <y>57</y>
+    <tooltip>$(actions)</tooltip>
+  </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
-    <x>388</x>
+    <x>338</x>
     <y>120</y>
     <width>172</width>
     <height>233</height>
@@ -980,7 +980,7 @@ Link</text>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Group</name>
-    <x>470</x>
+    <x>420</x>
     <y>370</y>
     <width>86</width>
     <height>80</height>
