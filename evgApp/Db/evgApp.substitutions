@@ -36,16 +36,16 @@ file "perSysmonAI.template" {
   { \$(P),\$(NAME),       "MARBLE:P12V",     "V",         4.0e-3,       0,    2,  0.05,  11.0,  11.2,  12.8,  13.0, "INA219 U57 voltage" }
   { \$(P),\$(NAME), "QSFP1:Temperature", "deg C",     0.00390625,       0,    1,     1,     0,     0,    70,    75, "QSFP 1 temperature" }
   { \$(P),\$(NAME),         "QSFP1:Vcc",     "V",         1.0e-4,       0,    2,  0.05, 3.145, 3.201, 3.399, 3.465, "QSFP 1 Vcc" }
-  { \$(P),\$(NAME),    "QSFP1:RxPower1",    "uW",            0.1,       0,    1,    30,    30,    50, 10000, 10000, "QSFP 1 channel 1 receiver power" }
-  { \$(P),\$(NAME),    "QSFP1:RxPower2",    "uW",            0.1,       0,    1,    30,     0,     0, 10000, 10000, "QSFP 1 channel 2 receiver power" }
-  { \$(P),\$(NAME),    "QSFP1:RxPower3",    "uW",            0.1,       0,    1,    30,     0,     0, 10000, 10000, "QSFP 1 channel 3 receiver power" }
-  { \$(P),\$(NAME),    "QSFP1:RxPower4",    "uW",            0.1,       0,    1,    30,     0,     0, 10000, 10000, "QSFP 1 channel 4 receiver power" }
+  { \$(P),\$(NAME),    "QSFP1:RxPower1",    "uW",            0.1,       0,    1,    30,    30,    40, 10000, 10000, "QSFP 1 channel 1 receiver power" }
+  { \$(P),\$(NAME),    "QSFP1:RxPower2",    "uW",            0.1,       0,    1,    30,    30,    40, 10000, 10000, "QSFP 1 channel 2 receiver power" }
+  { \$(P),\$(NAME),    "QSFP1:RxPower3",    "uW",            0.1,       0,    1,    30,    30,    40, 10000, 10000, "QSFP 1 channel 3 receiver power" }
+  { \$(P),\$(NAME),    "QSFP1:RxPower4",    "uW",            0.1,       0,    1,    30,    30,    40, 10000, 10000, "QSFP 1 channel 4 receiver power" }
   { \$(P),\$(NAME), "QSFP2:Temperature", "deg C",     0.00390625,       0,    1,     1,     0,     0,    70,    75, "QSFP 2 temperature" }
   { \$(P),\$(NAME),         "QSFP2:Vcc",     "V",         1.0e-4,       0,    2,  0.05, 3.145, 3.201, 3.399, 3.465, "QSFP 2 Vcc" }
-  { \$(P),\$(NAME),    "QSFP2:RxPower1",    "uW",            0.1,       0,    1,    30,     0,     0, 10000, 10000, "QSFP 2 channel 1 receiver power" }
-  { \$(P),\$(NAME),    "QSFP2:RxPower2",    "uW",            0.1,       0,    1,    30,     0,     0, 10000, 10000, "QSFP 2 channel 2 receiver power" }
-  { \$(P),\$(NAME),    "QSFP2:RxPower3",    "uW",            0.1,       0,    1,    30,     0,     0, 10000, 10000, "QSFP 2 channel 3 receiver power" }
-  { \$(P),\$(NAME),    "QSFP2:RxPower4",    "uW",            0.1,       0,    1,    30,     0,     0, 10000, 10000, "QSFP 2 channel 4 receiver power" }
+  { \$(P),\$(NAME),    "QSFP2:RxPower1",    "uW",            0.1,       0,    1,    30,    30,    40, 10000, 10000, "QSFP 2 channel 1 receiver power" }
+  { \$(P),\$(NAME),    "QSFP2:RxPower2",    "uW",            0.1,       0,    1,    30,    30,    40, 10000, 10000, "QSFP 2 channel 2 receiver power" }
+  { \$(P),\$(NAME),    "QSFP2:RxPower3",    "uW",            0.1,       0,    1,    30,    30,    40, 10000, 10000, "QSFP 2 channel 3 receiver power" }
+  { \$(P),\$(NAME),    "QSFP2:RxPower4",    "uW",            0.1,       0,    1,    30,    30,    40, 10000, 10000, "QSFP 2 channel 4 receiver power" }
   { \$(P),\$(NAME),   "Marble:U29:Temp", "deg C",            0.5,       0,    1,     1,     0,     0,    70,    75, "Marble U29 temperature" }
   { \$(P),\$(NAME),   "Marble:U28:Temp", "deg C",            0.5,       0,    1,     1,     0,     0,    70,    75, "Marble U28 temperature" }
   { \$(P),\$(NAME),  "Marble:U27:Temp1", "deg C",            1.0,       0,    0,     2,     0,     0,    70,    75, "Marble U27 external temp 1" }
