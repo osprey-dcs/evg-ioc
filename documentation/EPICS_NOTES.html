@@ -1,0 +1,649 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>EVG_EVR_EPICS_NOTES</title>
+  </head>
+  <body>
+    <h2>Introduction</h2>
+    <p><span style="font-family: Times New Roman, Times, serif;">This
+        IOC application uses a LEEP driver to communicate with Osprey
+        Event Generator and Event Receiver node.&nbsp; The records
+        mentioned in the following sections have names beginning with a
+      </span><span style="font-family: Times New Roman, Times, serif;"><span
+          style="font-family: Times New Roman, Times, serif;">$(P)
+          macro.<br>
+        </span></span><br>
+    </p>
+    <h2 style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);
+      font-family: -webkit-standard; font-style: normal;
+      font-variant-caps: normal; letter-spacing: normal; orphans: 2;
+      text-align: start; text-indent: 0px; text-transform: none;
+      white-space: normal; widows: 2; word-spacing: 0px;
+      -webkit-text-stroke-width: 0px; text-decoration-line: none;
+      text-decoration-thickness: auto; text-decoration-style: solid;"><span
+        style="font-family: &quot;Times New Roman&quot;, Times, serif;">Build
+        Information<br>
+      </span></h2>
+    <h2 style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);
+      font-family: -webkit-standard; font-style: normal;
+      font-variant-caps: normal; letter-spacing: normal; orphans: 2;
+      text-align: start; text-indent: 0px; text-transform: none;
+      white-space: normal; widows: 2; word-spacing: 0px;
+      -webkit-text-stroke-width: 0px; text-decoration-line: none;
+      text-decoration-thickness: auto; text-decoration-style: solid;"><span
+        style="font-family: &quot;Times New Roman&quot;, Times, serif;"></span></h2>
+    <p style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);
+      font-family: -webkit-standard; font-style: normal;
+      font-variant-caps: normal; font-weight: 400; letter-spacing:
+      normal; orphans: 2; text-align: start; text-indent: 0px;
+      text-transform: none; white-space: normal; widows: 2;
+      word-spacing: 0px; -webkit-text-stroke-width: 0px;
+      text-decoration-line: none; text-decoration-thickness: auto;
+      text-decoration-style: solid;"><span style="font-family:
+        &quot;Times New Roman&quot;, Times, serif;">The time at which
+        the firmware and software were built is contained in the
+        per-node stringin records<span class="Apple-converted-space">
+          Date:FW-I</span></span><span style="font-family: &quot;Times
+        New Roman&quot;, Times, serif;"> a</span><span
+        style="font-family: &quot;Times New Roman&quot;, Times, serif;">nd<span
+          class="Apple-converted-space"> Date:SW-I</span></span><span
+        style="font-family: &quot;Times New Roman&quot;, Times, serif;">,
+        respectively.<br>
+        <br>
+      </span></p>
+    <p><span style="font-family: Times New Roman, Times, serif;"><span
+          style="font-family: Times New Roman, Times, serif;"> </span></span></p>
+    <h2><span style="font-family: Times New Roman, Times, serif;">System
+        Monitoring <br>
+      </span></h2>
+    <div style="margin-left: 40px;"> </div>
+    <table style=" text-align: left; width: 80%;" cellspacing="2"
+      cellpadding="2" border="1">
+      <tbody>
+        <tr>
+          <td style="text-align: center;"><span style="font-weight:
+              bold;"><span style="font-family: Times New Roman, Times,
+                serif;">Name</span></span><span style="font-family:
+              Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-weight:
+              bold;"><span style="font-family: Times New Roman, Times,
+                serif;">Type</span></span><span style="font-family:
+              Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="vertical-align: middle; text-align: center;"><span
+              style="font-weight: bold;"><span style="font-family: Times
+                New Roman, Times, serif;">Description</span></span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">FPGA:powerUp</span><span
+              style="font-family: Times New Roman, Times, serif;">_<br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">longin</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span><span style="font-family: Times New Roman, Times,
+              serif;"> </span></td>
+          <td style="vertical-align: middle; text-align: left;"><span
+              style="font-family: Times New Roman, Times, serif;">FPGA
+              has powered up.&nbsp;&nbsp; Value cleared when this record
+              is processed.&nbsp;&nbsp; Value written is ignored.</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle; text-align: center;"><span
+              style="font-family: Times New Roman, Times, serif;">FPGA:uptime</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="vertical-align: middle; text-align: center;"><span
+              style="font-family: Times New Roman, Times, serif;">longin</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="vertical-align: middle; text-align: left;"><span
+              style="font-family: Times New Roman, Times, serif;">Number
+              of seconds since FPGA powered up or rebooted.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">FPGA:Temperature</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">FPGA internal temperature in
+              degrees C.</span><span style="font-family: Times New
+              Roman, Times, serif;"><br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">FPGA:VccINT</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">FPGA internal Vcc.<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">FPGA:VccAUX</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">FPGA auxiliary Vcc.<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">FPGA:VBRAM</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">FPGA block RAM Vcc.<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">MARBLE:FMC1:P12I</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Current being drawn through
+              Marble FMC 1 connector 12 volt supply.<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">MARBLE:FMC1:P12V</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Voltage at Marble FMC 1
+              connector 12 volt supply.</span><br>
+            <span style="font-family: Times New Roman, Times, serif;"></span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">MARBLE:FMC2:P12I</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Current being drawn through
+              Marble FMC 2 connector 12 volt supply.</span><br>
+            <span style="font-family: Times New Roman, Times, serif;"></span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">MARBLE:FMC2:P12V</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Voltage at Marble FMC 2
+              connector 12 volt supply.</span><br>
+            <span style="font-family: Times New Roman, Times, serif;"></span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">MARBLE:P12I</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Current drawn from Marble 12V
+              supply.<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">MARBLE:P12V</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">Marble 12V supply actual
+              voltage.</span><br>
+            <span style="font-family: Times New Roman, Times, serif;"></span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP1:Temperature</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP1 temperature.<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP1:Vcc</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP1 supply voltage.<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP1:RxPower1</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP1, channel 1 received
+              power.<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP1:RxPower2</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP1, channel 2 received
+              power.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP1:RxPower3</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP1, channel 3 received
+              power.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP1:RxPower4</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP1, channel 4 received
+              power.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP2:Temperature</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP2 temperature.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP2:Vcc</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP2 supply voltage.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP2:RxPower1</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP2, channel 1 received
+              power.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP2:RxPower2</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP2, channel 2 received
+              power.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP2:RxPower3</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP2, channel 3 received
+              power.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP2:RxPower4</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">QSFP2, channel 4 received
+              power.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">Marble:U27:Temp1</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Marble MAX6639 (U27) temperature
+              monitor and fan controller external temperature 1.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">Marble:U27:Tach1</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Marble MAX6639 (U27) temperature
+              monitor and fan controller tachometer 1 register.&nbsp;
+              Fan speed is inversely related to this value.<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">Marble:U27:Tach2</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Marble MAX6639 (U27) temperature
+              monitor and fan controller tachometer 2 register.&nbsp;
+              Fan speed is inversely related to this value.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">Marble:U27:Fan1</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Marble MAX6639 (U27) temperature
+              monitor and fan controller fan 1 duty cycle.<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle; text-align: center;"><span
+              style="font-family: Times New Roman, Times, serif;">Marble:U27:Fan2</span></td>
+          <td style="vertical-align: middle; text-align: center;"><span
+              style="font-family: Times New Roman, Times, serif;">ai</span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Marble MAX6639 (U27) temperature
+              monitor and fan controller fan 2 duty cycle.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">Marble:U28:Temp</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Marble LM75 (U28) temperature
+              monitor.<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">Marble:U29:Temp</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">ai</span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Marble LM75 (U29) temperature
+              monitor.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">MGT:status</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">longin</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="text-align: left;"><span style="font-family: Times
+              New Roman, Times, serif;">Bitmap of MGT 'receiver link up'
+              status.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">Marble:VCXO:PPS</span></td>
+          <td style="text-align: center;"><span style="font-family:
+              Times New Roman, Times, serif;">longin</span><span
+              style="font-family: Times New Roman, Times, serif;"><br>
+            </span></td>
+          <td style="vertical-align: top;"><span style="font-family:
+              Times New Roman, Times, serif;">Marble system clock
+              adjustment phase-locked loop status register:</span><br>
+            <div style="margin-left: 40px;"><span style="font-family:
+                Times New Roman, Times, serif;"></span><br>
+            </div>
+            <div style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);
+              font-family: -webkit-standard; font-style: normal;
+              font-variant-caps: normal; font-weight: 400;
+              letter-spacing: normal; text-align: start; text-indent:
+              0px; text-transform: none; white-space: normal;
+              word-spacing: 0px; -webkit-text-stroke-width: 0px;
+              text-decoration-line: none; text-decoration-style: solid;
+              margin-left: 120px;"><span style="font-family: &quot;Times
+                New Roman&quot;, Times, serif;"></span></div>
+            <div style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);
+              font-family: -webkit-standard; font-style: normal;
+              font-variant-caps: normal; font-weight: 400;
+              letter-spacing: normal; text-align: start; text-indent:
+              0px; text-transform: none; white-space: normal;
+              word-spacing: 0px; -webkit-text-stroke-width: 0px;
+              text-decoration-line: none; text-decoration-style: solid;
+              margin-left: 120px;"><span style="font-family: &quot;Times
+                New Roman&quot;, Times, serif;"></span></div>
+            <table style="caret-color: rgb(0, 0, 0); font-family:
+              -webkit-standard; letter-spacing: normal; text-transform:
+              none; word-spacing: 0px; -webkit-text-stroke-width: 0px;
+              text-decoration-line: none; text-decoration-style: solid;
+              text-align: left; width: 85%; margin-left: 40px;"
+              cellspacing="2" cellpadding="2" border="1">
+              <tbody>
+                <tr>
+                  <td style="text-align: center;"><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;"><span style="font-weight: bold;">Bit</span></span><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;"><br>
+                    </span></td>
+                  <td style="vertical-align: middle; text-align:
+                    center;"><span style="font-family: &quot;Times New
+                      Roman&quot;, Times, serif;"><span
+                        style="font-weight: bold;">Description</span></span><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;"><br>
+                    </span></td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;"><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;">31</span><span style="font-family:
+                      &quot;Times New Roman&quot;, Times, serif;"><br>
+                    </span></td>
+                  <td style=" text-align: left;"><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;">At least one of the PPS marker
+                      inputs is valid</span><span style="font-family:
+                      &quot;Times New Roman&quot;, Times, serif;"><span
+                        style="font-family: &quot;Times New Roman&quot;,
+                        Times, serif;"><span
+                          class="Apple-converted-space"></span></span>.</span><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;"><br>
+                    </span></td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;"><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;">30</span><span style="font-family:
+                      &quot;Times New Roman&quot;, Times, serif;"><br>
+                    </span></td>
+                  <td style="text-align: left;"><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;">Fabric (Tertiary) PPS marker is
+                      valid.</span><span style="font-family: &quot;Times
+                      New Roman&quot;, Times, serif;"><br>
+                    </span></td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;"><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;">29</span><span style="font-family:
+                      &quot;Times New Roman&quot;, Times, serif;"><br>
+                    </span></td>
+                  <td style="text-align: left;"><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;">Secondary hardware PPS marker is
+                      valid.</span><span style="font-family: &quot;Times
+                      New Roman&quot;, Times, serif;"><br>
+                    </span><span style="font-family: &quot;Times New
+                      Roman&quot;, Times, serif;"></span></td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;"><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;">28</span><span style="font-family:
+                      &quot;Times New Roman&quot;, Times, serif;"><br>
+                    </span></td>
+                  <td style="text-align: left;"><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;"><span style="font-family:
+                        &quot;Times New Roman&quot;, Times, serif;">Primary
+                        hardware PPS marker is valid.</span><span
+                        style="font-family: &quot;Times New Roman&quot;,
+                        Times, serif;"><br>
+                      </span></span><span style="font-family:
+                      &quot;Times New Roman&quot;, Times, serif;"></span></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: middle; text-align:
+                    center;"><span style="font-family: &quot;Times New
+                      Roman&quot;, Times, serif;">27</span><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;"><br>
+                    </span></td>
+                  <td style="vertical-align: middle; text-align: left;"><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;"><span style="font-family:
+                        &quot;Times New Roman&quot;, Times, serif;">Toggles
+                        state on rising edge of<span
+                          class="Apple-converted-space">&nbsp;</span></span><span
+                        style="font-family: &quot;Times New Roman&quot;,
+                        Times, serif;">currently selected PPS marker
+                        input.</span><span style="font-family:
+                        &quot;Times New Roman&quot;, Times, serif;"></span></span></td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;"><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;">26–0</span><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;"><br>
+                    </span></td>
+                  <td style="text-align: left;"><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;">The number of clk125 cycles between
+                      the most recent rising edges of the<span
+                        class="Apple-converted-space">&nbsp;</span></span><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;">currently selected PPS marker
+                      input.&nbsp; Valid only if bit 31 is set.</span><span
+                      style="font-family: &quot;Times New Roman&quot;,
+                      Times, serif;"></span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-left: 40px;"><span style="font-family:
+                Times New Roman, Times, serif;">
+                <meta charset="UTF-8">
+              </span><span style="font-family: Times New Roman, Times,
+                serif;"><br>
+              </span><span style="font-family: Times New Roman, Times,
+                serif;"></span></div>
+            <div style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);
+              font-family: -webkit-standard; font-style: normal;
+              font-variant-caps: normal; font-weight: 400;
+              letter-spacing: normal; text-align: start; text-indent:
+              0px; text-transform: none; white-space: normal;
+              word-spacing: 0px; -webkit-text-stroke-width: 0px;
+              text-decoration-line: none; text-decoration-style: solid;
+              margin-left: 80px;"><span style="font-family: &quot;Times
+                New Roman&quot;, Times, serif;"></span></div>
+            <div style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);
+              font-family: -webkit-standard; font-style: normal;
+              font-variant-caps: normal; font-weight: 400;
+              letter-spacing: normal; text-align: start; text-indent:
+              0px; text-transform: none; white-space: normal;
+              word-spacing: 0px; -webkit-text-stroke-width: 0px;
+              text-decoration-line: none; text-decoration-style: solid;
+              margin-left: 80px;"><span style="font-family: &quot;Times
+                New Roman&quot;, Times, serif;"></span></div>
+            <span style="font-family: Times New Roman, Times, serif;">
+              <meta charset="UTF-8">
+            </span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-left: 40px;"> </div>
+    <div style="margin-left: 80px;"> <span style="font-family: Times
+        New Roman, Times, serif;"><span style="font-family: Times New
+          Roman, Times, serif;"></span></span><span style="font-family:
+        Times New Roman, Times, serif;"></span> </div>
+    <div style="margin-left: 40px;"> </div>
+    <br>
+    <p><span style="font-family: Times New Roman, Times, serif;">
+        <meta charset="UTF-8">
+      </span> </p>
+    <h2><span style="font-family: Times New Roman, Times, serif;">Event
+        Generator and Event Receiver</span><span style="font-family:
+        Times New Roman, Times, serif;"> Records</span></h2>
+    <span style="font-family: Times New Roman, Times, serif;">Event
+      generator and event receiver records are described in the
+      documentation for their respective support modules.<br>
+      <br>
+    </span>
+    <p><span style="font-family: Times New Roman, Times, serif;"> </span></p>
+    <span style="font-family: Times New Roman, Times, serif;"><span
+        style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);
+        font-size: medium; font-style: normal; font-variant-caps:
+        normal; font-weight: 400; letter-spacing: normal; text-align:
+        center; text-indent: 0px; text-transform: none; white-space:
+        normal; word-spacing: 0px; -webkit-text-stroke-width: 0px;
+        text-decoration: none; display: inline !important; float: none;"></span></span>
+    <h2><span style="font-family: Times New Roman, Times, serif;">Inte</span><span
+        style="font-family: Times New Roman, Times, serif;">rnal Records</span></h2>
+    <p><span style="font-family: Times New Roman, Times, serif;">Records
+        with names ending in an underscore are intended for internal use
+        by the IOC and should not be written by any other clients.<br>
+      </span></p>
+    <span style="font-family: Times New Roman, Times, serif;"></span>
+    <p><span style="font-family: Times New Roman, Times, serif;"><br>
+      </span><br>
+      <span style="font-family: Times New Roman, Times, serif;">
+        <meta charset="UTF-8">
+      </span> </p>
+  </body>
+</html>
