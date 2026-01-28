@@ -5,7 +5,7 @@
 # IPADDR - Device hostname / IP address, and optional port (default 50006)
 
 file "feed_base.template" {
-{NAME="\$(NAME)", PREF="\$(P)", ADDR="\$(IPADDR)"}
+{NAME="\$(NAME)", PREF="\$(P)APP:", ADDR="\$(IPADDR)"}
 {NAME="\$(P)GLD", PREF="\$(P)GLD:", ADDR="\$(IPADDR):803"}
 }
 
