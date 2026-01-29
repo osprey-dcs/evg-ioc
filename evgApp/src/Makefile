@@ -54,8 +54,6 @@ endif
 ifdef PVXS_MAJOR_VERSION # prefer v2
 PROD_DBD += pvxsIoc.dbd
 PROD_LIBS += pvxsIoc pvxs
-else
-$(error oops)
 endif
 
 # Finally link to the EPICS Base libraries
