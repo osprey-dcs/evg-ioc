@@ -62,7 +62,7 @@ record(mbbi, "$(P)GLD:image") {
     field(THST, "Both") # transient?
     field(ZRSV, "MAJOR")
     field(ONSV, "MINOR")
-    field(THST, "INVALID")
+    field(THSV, "INVALID")
 }
 
 record(bo, "$(P)GLD:autoboot") {
