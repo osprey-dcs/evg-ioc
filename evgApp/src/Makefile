@@ -37,23 +37,23 @@ evg_SRCS_DEFAULT += evgMain.cpp
 evg_SRCS_vxWorks += -nil-
 
 ifneq (,$(CAPUTLOG))
-PROD_DBD += caPutLog.dbd
-PROD_LIBS += caPutLog
+evg_DBD += caPutLog.dbd
+evg_LIBS += caPutLog
 endif
 
 ifneq (,$(RECSYNC))
-PROD_DBD += reccaster.dbd
-PROD_LIBS += reccaster
+evg_DBD += reccaster.dbd
+evg_LIBS += reccaster
 endif
 
 ifdef LINSTAT_0_0_0
-PROD_DBD += linStat.dbd
-PROD_LIBS += linStat
+evg_DBD += linStat.dbd
+evg_LIBS += linStat
 endif
 
 ifdef PVXS_MAJOR_VERSION # prefer v2
-PROD_DBD += pvxsIoc.dbd
-PROD_LIBS += pvxsIoc pvxs
+evg_DBD += pvxsIoc.dbd
+evg_LIBS += pvxsIoc pvxs
 endif
 
 # Finally link to the EPICS Base libraries
