@@ -19,11 +19,13 @@ DBD += evg.dbd
 # evg.dbd will be made up from these files:
 evg_DBD += base.dbd
 evg_DBD += feed.dbd
+evg_DBD += asSupport.dbd
 evg_DBD += copyTime.dbd
 evg_DBD += goldenBoot.dbd
 
 # Add all the support libraries needed by this IOC
 evg_LIBS += feed
+evg_LIBS += autosave
 
 # evg_registerRecordDeviceDriver.cpp derives from evg.dbd
 evg_SRCS += evg_registerRecordDeviceDriver.cpp
@@ -34,8 +36,27 @@ evg_SRCS += goldenBoot.c
 evg_SRCS_DEFAULT += evgMain.cpp
 evg_SRCS_vxWorks += -nil-
 
-# Add support from base/src/vxWorks if needed
-#evg_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
+ifneq (,$(CAPUTLOG))
+PROD_DBD += caPutLog.dbd
+PROD_LIBS += caPutLog
+endif
+
+ifneq (,$(RECSYNC))
+PROD_DBD += reccaster.dbd
+PROD_LIBS += reccaster
+endif
+
+ifdef LINSTAT_0_0_0
+PROD_DBD += linStat.dbd
+PROD_LIBS += linStat
+endif
+
+ifdef PVXS_MAJOR_VERSION # prefer v2
+PROD_DBD += pvxsIoc.dbd
+PROD_LIBS += pvxsIoc pvxs
+else
+$(error oops)
+endif
 
 # Finally link to the EPICS Base libraries
 evg_LIBS += $(EPICS_BASE_IOC_LIBS)
