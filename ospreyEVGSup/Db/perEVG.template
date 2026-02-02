@@ -72,3 +72,9 @@ record(longout, "$(P)EVG:MAP:dbus") {
     field(DTYP, "FEED Register Write")
     field(OUT,  "@name=$(NAME) reg=EVG:MAP:dbus")
 }
+
+record(longin, "$(P)EVG:IN:PMOD") {
+    field(DTYP, "FEED Register Read")
+    field(SCAN, "1 second")
+    field(INP , "@name=$(NAME) reg=MARBLE:PMOD:inputs")
+}
