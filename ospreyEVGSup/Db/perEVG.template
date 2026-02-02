@@ -78,3 +78,14 @@ record(longin, "$(P)EVG:IN:PMOD") {
     field(SCAN, "1 second")
     field(INP , "@name=$(NAME) reg=MARBLE:PMOD:inputs")
 }
+
+record(bo, "$(P)FPGA:reboot") {
+    field(ZNAM, "Boot")
+    field(ONAM, "Boot")
+    field(FLNK, "$(P)FPGA:reboot_")
+}
+record(longout, "$(P)FPGA:reboot_") {
+    field(DTYP, "FEED Register Write")
+    field(OUT,  "@name=$(NAME) reg=FPGA:reboot")
+    field(VAL , "100")
+}
