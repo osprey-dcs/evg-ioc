@@ -6,7 +6,7 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------------------
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
-DB += evgApp.db
+DB += ospreyEVT.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
@@ -16,3 +16,9 @@ include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
 
+# rules for generated inputs to MSI
+
+ospreyEVT.db$(DEP): \
+  $(COMMON_DIR)/evgApp.db \
+  $(COMMON_DIR)/perEVR.db \
+  $(COMMON_DIR)/perEVRevents.db

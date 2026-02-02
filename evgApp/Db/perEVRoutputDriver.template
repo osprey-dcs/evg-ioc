@@ -1,5 +1,5 @@
 record(mbbo, "$(P)EVR:OUT:$(N):source") {
-    field(DESC, "Hardware output $(N) source")
+    field(DESC, "$(DESC=Hardware output $(N) source)")
     field(DTYP, "FEED Register Write")
     field(OUT , "@name=$(NAME) reg=EVR:out$(N):source")
     field(ZRVL, "0")
