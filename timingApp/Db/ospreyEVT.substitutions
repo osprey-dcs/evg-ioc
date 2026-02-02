@@ -32,14 +32,14 @@ file "perEVRevents.db" {
 {}
 }
 file "perEVRoutputDriver.template" {
-  { N="1" }
-  { N="2" }
-  { N="3" }
-  { N="4" }
-  { N="5" }
-  { N="6" }
-  { N="7" }
-  { N="8" }
+  { N="1", DESC="OUT1" }
+  { N="2", DESC="OUT2" }
+  { N="3", DESC="OUT3" }
+  { N="4", DESC="OUT4" }
+  { N="5", DESC="OUT5" }
+  { N="6", DESC="OUT6" }
+  { N="7", DESC="OUT7" }
+  { N="8", DESC="OUT8" }
 }
 
 ## EVG ##
