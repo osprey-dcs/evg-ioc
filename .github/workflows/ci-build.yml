@@ -3,6 +3,9 @@ name: EVG
 on: [push, pull_request, workflow_dispatch]
 
 env:
+  MODULES: autosave feed_core
+  FEED_CORE_REPONAME: feed-core
+  FEED_CORE_REPOOWNER: osprey-dcs
   SETUP_PATH: .ci-local:.ci
   CMP: gcc
   SET: feed
