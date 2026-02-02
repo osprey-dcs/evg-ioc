@@ -1,13 +1,13 @@
-#!../../bin/linux-x86_64/evg
+#!../../bin/linux-x86_64/ospreyTimingIoc
 
 epicsEnvSet(EVG_IPV4, "$(EVG_IPV4=127.0.0.1)")
-epicsEnvSet("P", "EVG:")
+epicsEnvSet("P", "EVT:")
 
 ## Register all support components
-dbLoadDatabase "../../dbd/evg.dbd"
-evg_registerRecordDeviceDriver(pdbbase) 
+dbLoadDatabase "../../dbd/ospreyTimingIoc.dbd"
+ospreyTimingIoc_registerRecordDeviceDriver(pdbbase)
 
-dbLoadRecords("../../db/ospreyEVT.db","P=$(P),NAME=EVG,IPADDR=$(EVG_IPV4)")
+dbLoadRecords("../../db/ospreyEVT.db","P=$(P),NAME=EVT,IPADDR=$(EVG_IPV4)")
 
 iocInit()
-dbpf EVG:GLD:autoboot 1
+dbpf EVT:GLD:autoboot 1
