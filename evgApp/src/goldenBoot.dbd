@@ -1,1 +1,0 @@
-device(longout, INST_IO, goldenBootLO, "Boot to App")
