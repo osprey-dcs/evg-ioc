@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>EVT Top $(P)</name>
+  <class>EVG</class>
+  <macros>
+    <P>EVT:</P>
+  </macros>
+  <width>820</width>
+  <height>670</height>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <file>ospreyEVT.bob</file>
+    <x>10</x>
+    <y>60</y>
+    <width>800</width>
+    <height>600</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>The top level OPI file for an EVT chassis is "ospreyEVT.bob", which has a single undefined macro $(P)
+The example below defined P="$(P)"</text>
+    <x>20</x>
+    <y>10</y>
+    <width>740</width>
+    <height>40</height>
+  </widget>
+</display>
