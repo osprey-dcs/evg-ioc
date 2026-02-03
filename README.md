@@ -49,7 +49,7 @@ make -C evg-ioc
 ## Running
 
 ```sh
-cd iocBoot/iocEVT/
+cd evg-ioc/iocBoot/iocEVT/
 
 EVT_IPADDR=1.2.3.4 ./st.cmd
 ```
