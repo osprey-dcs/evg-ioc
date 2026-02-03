@@ -169,7 +169,7 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_10</name>
     <macros>
-      <N>3</N>
+      <N>4</N>
     </macros>
     <file>_ospreyEVRdelayout.bob</file>
     <x>230</x>
@@ -181,7 +181,7 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_11</name>
     <macros>
-      <N>4</N>
+      <N>3</N>
     </macros>
     <file>_ospreyEVRdelayout.bob</file>
     <x>230</x>
@@ -217,7 +217,7 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_14</name>
     <macros>
-      <N>7</N>
+      <N>8</N>
     </macros>
     <file>_ospreyEVRdelayout.bob</file>
     <x>230</x>
@@ -229,7 +229,7 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_15</name>
     <macros>
-      <N>8</N>
+      <N>7</N>
     </macros>
     <file>_ospreyEVRdelayout.bob</file>
     <x>230</x>
@@ -280,6 +280,7 @@
     <y>50</y>
     <width>120</width>
     <height>20</height>
+    <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
