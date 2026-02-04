@@ -7,6 +7,6 @@ epicsEnvSet("P", "EVT:")
 dbLoadDatabase "../../dbd/ospreyTimingIoc.dbd"
 ospreyTimingIoc_registerRecordDeviceDriver(pdbbase)
 
-dbLoadRecords("../../db/ospreyEVT.db","P=$(P),NAME=EVT,IPADDR=$(EVG_IPV4)")
+dbLoadRecords("../../db/ospreyEVT.db","P=$(P),NAME=EVT,IPADDR=$(EVT_IPADDR)")
 
 iocInit()
