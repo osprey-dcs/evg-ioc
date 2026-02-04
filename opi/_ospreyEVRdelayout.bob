@@ -19,20 +19,20 @@
     <pv_name>$(P)EVR:OUT:$(N):source</pv_name>
     <x>110</x>
     <y>5</y>
-    <width>80</width>
+    <width>90</width>
     <height>20</height>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry</name>
     <pv_name>$(P)EVR:OUT:$(N):delay</pv_name>
-    <x>195</x>
+    <x>205</x>
     <y>5</y>
     <width>90</width>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_1</name>
     <pv_name>$(P)EVR:OUT:$(N):width</pv_name>
-    <x>290</x>
+    <x>300</x>
     <y>5</y>
     <width>90</width>
   </widget>

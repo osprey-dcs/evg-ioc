@@ -306,4 +306,86 @@
     <width>90</width>
     <format>4</format>
   </widget>
+  <widget type="group" version="3.0.0">
+    <name>FPGA Boot Control</name>
+    <y>440</y>
+    <width>270</width>
+    <height>150</height>
+    <widget type="label" version="2.0.0">
+      <name>Label_17</name>
+      <text>Current</text>
+      <x>2</x>
+      <y>2</y>
+      <width>70</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>$(P)GLD:image</pv_name>
+      <x>82</x>
+      <y>2</y>
+      <width>60</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_18</name>
+      <text>Reboot</text>
+      <x>2</x>
+      <y>32</y>
+      <width>70</width>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button</name>
+      <pv_name>$(P)GLD:autoboot</pv_name>
+      <x>82</x>
+      <y>32</y>
+      <width>90</width>
+      <height>20</height>
+      <labels_from_pv>true</labels_from_pv>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_1</name>
+      <actions>
+        <action type="write_pv">
+          <description>WritePV</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>0</value>
+        </action>
+      </actions>
+      <pv_name>$(P)GLD:boot</pv_name>
+      <text>Boot App</text>
+      <x>2</x>
+      <y>62</y>
+      <width>80</width>
+      <height>20</height>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>$(P)GLD:IPADDR</pv_name>
+      <x>92</x>
+      <y>62</y>
+      <width>125</width>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_2</name>
+      <actions>
+        <action type="write_pv">
+          <description>WritePV</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>0</value>
+        </action>
+      </actions>
+      <pv_name>$(P)FPGA:reboot</pv_name>
+      <text>Boot Gold</text>
+      <x>2</x>
+      <y>92</y>
+      <width>80</width>
+      <height>20</height>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_5</name>
+      <pv_name>$(P)APP:IPADDR</pv_name>
+      <x>97</x>
+      <y>92</y>
+      <width>140</width>
+    </widget>
+  </widget>
 </display>
