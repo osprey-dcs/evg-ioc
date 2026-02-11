@@ -1,2 +1,11 @@
 device(ai, CONSTANT, copyTime2VALAI, "Copy VAL 2 TIME")
 device(longout, INST_IO, goldenBootLO, "Boot to App")
+
+# OUT="@table=NAME"
+device(longout, INST_IO, devBitTableSetWords, "Bit Table Set Words")
+# OUT="@table=NAME action=ACT#"
+device(longout, INST_IO, devBitTableUpdate, "Bit Table Update")
+# INP="@table=NAME"
+device(aai, INST_IO, devBitTableRead, "Bit Table Read")
+# cf. dbior()
+driver(drvBitTable)

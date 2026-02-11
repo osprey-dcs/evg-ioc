@@ -7,3 +7,48 @@ record(longout, "$(P)EVR:EV$(E):action") {
     field(DRVL, "0")
     field(DRVH, "0x3ffff")
 }
+
+record(mbboDirect, "$(P)EVR:EV$(E):action_") {
+    field(OUT , "$(P)EVR:EV$(E):action PP")
+}
+
+record(bo, "$(P)EVR:EV$(E):OUT1") {
+    field(OUT , "$(P)EVR:EV$(E):action_.B0 PP")
+    field(ZNAM, "Dis")
+    field(ONAM, "En")
+}
+record(bo, "$(P)EVR:EV$(E):OUT2") {
+    field(OUT , "$(P)EVR:EV$(E):action_.B1 PP")
+    field(ZNAM, "Dis")
+    field(ONAM, "En")
+}
+record(bo, "$(P)EVR:EV$(E):OUT3") {
+    field(OUT , "$(P)EVR:EV$(E):action_.B2 PP")
+    field(ZNAM, "Dis")
+    field(ONAM, "En")
+}
+record(bo, "$(P)EVR:EV$(E):OUT4") {
+    field(OUT , "$(P)EVR:EV$(E):action_.B3 PP")
+    field(ZNAM, "Dis")
+    field(ONAM, "En")
+}
+record(bo, "$(P)EVR:EV$(E):OUT5") {
+    field(OUT , "$(P)EVR:EV$(E):action_.B4 PP")
+    field(ZNAM, "Dis")
+    field(ONAM, "En")
+}
+record(bo, "$(P)EVR:EV$(E):OUT6") {
+    field(OUT , "$(P)EVR:EV$(E):action_.B5 PP")
+    field(ZNAM, "Dis")
+    field(ONAM, "En")
+}
+record(bo, "$(P)EVR:EV$(E):OUT7") {
+    field(OUT , "$(P)EVR:EV$(E):action_.B6 PP")
+    field(ZNAM, "Dis")
+    field(ONAM, "En")
+}
+record(bo, "$(P)EVR:EV$(E):OUT8") {
+    field(OUT , "$(P)EVR:EV$(E):action_.B7 PP")
+    field(ZNAM, "Dis")
+    field(ONAM, "En")
+}

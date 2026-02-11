@@ -1,0 +1,45 @@
+
+record(longout, "$(P)NBits-SP") {
+    field(DTYP, "Bit Table Set Words")
+    field(OUT , "@table=$(P)")
+    field(VAL , "0")
+}
+
+record(longout, "$(P)Action0_0-SP") {
+    field(DTYP, "Bit Table Update")
+    field(OUT , "@table=$(P) action=0")
+    field(VAL , "0")
+}
+
+record(longout, "$(P)Action0_1-SP") {
+    field(DTYP, "Bit Table Update")
+    field(OUT , "@table=$(P) action=0")
+    field(VAL , "0")
+}
+
+record(longout, "$(P)Action3_0-SP") {
+    field(DTYP, "Bit Table Update")
+    field(OUT , "@table=$(P) action=3")
+    field(VAL , "0")
+}
+
+record(longout, "$(P)Action15_0-SP") {
+    field(DTYP, "Bit Table Update")
+    field(OUT , "@table=$(P) action=15")
+    field(VAL , "0")
+}
+
+record(longout, "$(P)Action39_0-SP") {
+    field(DTYP, "Bit Table Update")
+    field(OUT , "@table=$(P) action=39")
+    field(VAL , "0")
+}
+
+record(aai, "$(P)Tbl-I") {
+    field(DTYP, "Bit Table Read")
+    field(INP , "@table=$(P)")
+    field(SCAN, "I/O Intr")
+    field(FTVL, "ULONG")
+    field(NELM, "512") # max 2 words per event
+    field(TPRO, "1")
+}

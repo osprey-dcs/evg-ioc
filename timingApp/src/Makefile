@@ -18,6 +18,7 @@ DBD += ospreyTiming.dbd
 
 ospreyTiming_SRCS += copyTime.c
 ospreyTiming_SRCS += goldenBoot.c
+ospreyTiming_SRCS += bitTable.cpp
 
 # Finally link to the EPICS Base libraries
 ospreyTiming_LIBS += $(EPICS_BASE_IOC_LIBS)

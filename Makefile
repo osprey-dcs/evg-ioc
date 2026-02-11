@@ -17,6 +17,9 @@ DIRS += exampleApp
 exampleApp_DEPEND_DIRS = timingApp
 endif
 
+DIRS += testApp
+testApp_DEPEND_DIRS = timingApp
+
 DIRS += iocBoot
 iocBoot_DEPEND_DIRS = exampleApp
 

@@ -1,5 +1,5 @@
 record(longout, "$(P)EVG:TMR:$(I):event") {
-    field(DESC, "EVG Timer $(I) event")
+    field(DESC, "Timer $(I)")
     field(DTYP, "FEED Register Write")
     field(OUT,  "@name=$(NAME) reg=EVG:TMR:$(I):event")
     field(LOPR, "0")
