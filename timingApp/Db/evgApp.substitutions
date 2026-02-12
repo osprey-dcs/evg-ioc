@@ -5,8 +5,8 @@
 # IPADDR - Device hostname / IP address, and optional port (default 50006)
 
 file "feed_base.template" {
-{NAME="\$(NAME)", PREF="\$(P)APP:", ADDR="\$(IPADDR)"}
-{NAME="\$(P)GLD", PREF="\$(P)GLD:", ADDR="\$(IPADDR):803"}
+{NAME="\$(NAME)", PREF="\$(P)APP:", ADDR="\$(IPADDR)"    , DEBUG="\$(DEBUG=0)"}
+{NAME="\$(P)GLD", PREF="\$(P)GLD:", ADDR="\$(IPADDR):803", DEBUG="\$(DEBUG=0)"}
 }
 
 file "goldenCtrl.template" {

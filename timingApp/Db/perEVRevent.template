@@ -1,54 +1,23 @@
-record(longout, "$(P)EVR:EV$(E):action") {
-    field(DESC, "Event code $(E) action bitmap")
-    field(DTYP, "FEED Register Write")
-    field(OUT , "@name=$(NAME) reg=EVR:evnt$(E):action")
-    field(LOPR, "0")
-    field(HOPR, "0x3ffff")
-    field(DRVL, "0")
-    field(DRVH, "0x3ffff")
+
+record(longout, "$(P)EVR:LOG:evt$(N)") {
+    field(DTYP, "Bit Table Update")
+    field(OUT , "@table=$(NAME) action=17")
+    field(DRVH, "255")
+    field(VAL , "0")
+    field(PINI, "1")
+    field(FLNK, "$(P)EVR:LOG:evt$(N)_")
+    info(autosaveFields_pass0, "VAL")
+}
+record(longout, "$(P)EVR:LOG:evt$(N)_") {
+    field(DTYP, "Event Table Set Code")
+    field(OUT , "@log=$(P) queue=evt$(N)")
+    field(OMSL, "closed_loop")
+    field(DOL , "$(P)EVR:LOG:evt$(N)")
 }
 
-record(mbboDirect, "$(P)EVR:EV$(E):action_") {
-    field(OUT , "$(P)EVR:EV$(E):action PP")
-}
-
-record(bo, "$(P)EVR:EV$(E):OUT1") {
-    field(OUT , "$(P)EVR:EV$(E):action_.B0 PP")
-    field(ZNAM, "Dis")
-    field(ONAM, "En")
-}
-record(bo, "$(P)EVR:EV$(E):OUT2") {
-    field(OUT , "$(P)EVR:EV$(E):action_.B1 PP")
-    field(ZNAM, "Dis")
-    field(ONAM, "En")
-}
-record(bo, "$(P)EVR:EV$(E):OUT3") {
-    field(OUT , "$(P)EVR:EV$(E):action_.B2 PP")
-    field(ZNAM, "Dis")
-    field(ONAM, "En")
-}
-record(bo, "$(P)EVR:EV$(E):OUT4") {
-    field(OUT , "$(P)EVR:EV$(E):action_.B3 PP")
-    field(ZNAM, "Dis")
-    field(ONAM, "En")
-}
-record(bo, "$(P)EVR:EV$(E):OUT5") {
-    field(OUT , "$(P)EVR:EV$(E):action_.B4 PP")
-    field(ZNAM, "Dis")
-    field(ONAM, "En")
-}
-record(bo, "$(P)EVR:EV$(E):OUT6") {
-    field(OUT , "$(P)EVR:EV$(E):action_.B5 PP")
-    field(ZNAM, "Dis")
-    field(ONAM, "En")
-}
-record(bo, "$(P)EVR:EV$(E):OUT7") {
-    field(OUT , "$(P)EVR:EV$(E):action_.B6 PP")
-    field(ZNAM, "Dis")
-    field(ONAM, "En")
-}
-record(bo, "$(P)EVR:EV$(E):OUT8") {
-    field(OUT , "$(P)EVR:EV$(E):action_.B7 PP")
-    field(ZNAM, "Dis")
-    field(ONAM, "En")
+record(longin, "$(P)EVR:LOG:cnt$(N)") {
+    field(DTYP, "Event Table Last")
+    field(INP , "@log=$(P) queue=evt$(N)")
+    field(SCAN, "I/O Intr")
+    field(TSE , "-2")
 }

@@ -1,3 +1,34 @@
+record(longin, "$(P)Marble:onConn_") {
+    field(DTYP, "FEED On Connect")
+    field(INP, "@name=$(NAME)")
+    field(SCAN, "I/O Intr")
+    field(FLNK, "$(P)FPGA:Mode")
+}
+
+# currently static
+# TODO: when dynamic, add re-trigger of onConnect chain to recalculate delay/width
+record(ai, "$(P)Ref:Freq") {
+    field(INP , "125")
+    field(PINI, "YES")
+    field(EGU , "MHz")
+    field(FLNK, "$(P)Ref:T")
+    info(autosaveFields_pass0, "VAL")
+}
+record(calc, "$(P)Ref:T") {
+    field(DESC, "Ref clk period")
+    field(INPA, "$(P)Ref:Freq")
+    field(INPB, "1e6") # MHz -> Hz
+    field(CALC, "1/(A*B)")
+    field(EGU , "s")
+    field(PREC, "3")
+    field(FLNK, "$(P)Ref:TN_")
+}
+record(calc, "$(P)Ref:TN_") {
+    field(INPA, "$(P)Ref:T")
+    field(INPB, "1e9") # s -> ns
+    field(CALC, "A*B")
+}
+
 record(bo, "$(P)Marble:PPS:Local") {
     field(DESC, "Enable/Disable local PPS marker")
     field(DTYP, "FEED Register Write")
@@ -27,4 +58,65 @@ record(mbbo, "$(P)Marble:MGTCLK0") {
     field(SVST, "FMC2_GBTCLK1")
     field(EIVL, "8")
     field(EIST, "Disable")
+}
+
+# FPGA:IO:select
+# 0x00000001 - 0 = EVR, 1 = EVG
+record(bi, "$(P)FPGA:Mode") {
+    field(DTYP, "FEED Register Read")
+    field(INP,  "@name=$(NAME) reg=FPGA:IO:select")
+    field(MASK, "0x1")
+    field(ZNAM, "EVR Only")
+    field(ONAM, "EVG/EVR")
+}
+
+# Marble:VCXO:PPS
+record(bi, "$(P)PPS:Ok") {
+    field(DTYP, "Raw Soft Channel")
+    field(INP , "$(P)Marble:VCXO:PPS CP")
+    field(MASK, "0x80000000")
+    field(ZNAM, "Invalid")
+    field(ZSV , "MAJOR")
+    field(ONAM, "Ok")
+}
+record(mbbi, "$(P)PPS:Src") {
+    field(DTYP, "Raw Soft Channel")
+    field(INP , "$(P)Marble:VCXO:PPS CP")
+    # 0x40000000 - source 3 valid (recovered/internal)
+    # 0x20000000 - source 2 valid (PMOD)
+    # 0x10000000 - source 1 valid (FMC)
+    field(SHFT, "28")
+    field(NOBT, "3")
+    field(ZRVL, "0")
+    field(ZRST, "NO PPS")
+    field(ZRSV, "MAJOR")
+    field(ONVL, "1")
+    field(ONST, "Rcv/Int")
+    field(TWVL, "2")
+    field(TWST, "PMOD")
+    field(THVL, "4")
+    field(THST, "FMC1")
+    field(UNSV, "MAJOR")
+}
+record(bi, "$(P)PPS:Tgl") {
+    field(DTYP, "Raw Soft Channel")
+    field(INP , "$(P)Marble:VCXO:PPS CP")
+    field(MASK, "0x08000000")
+    field(ZNAM, "*")
+    field(ONAM, ".")
+}
+record(calc, "$(P)PPS:Err") {
+    field(DESC, "PPS period error")
+    field(INPA, "$(P)Marble:VCXO:PPS CP")
+    field(INPB, "0x07ffffff")
+    field(INPC, "8e-9") # tick period (s)
+    field(INPD, "1.0") # expected period
+    field(CALC, "(A&B)*C-D")
+    field(EGU , "s")
+    field(PREC, "3")
+    field(HIGH, "20e-9")
+    field(LOW , "-20e-9")
+    field(HSV , "MAJOR")
+    field(LSV , "MAJOR")
+    info(Q:form, "Engineering")
 }

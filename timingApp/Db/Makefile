@@ -8,6 +8,8 @@ include $(TOP)/configure/CONFIG
 # databases, templates, substitutions like this
 DB += ospreyEVT.db
 
+DBDDEPENDS_FILES += evgApp.db$(DEP)
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_template = <templatename>
@@ -19,6 +21,4 @@ include $(TOP)/configure/RULES
 # rules for generated inputs to MSI
 
 ospreyEVT.db$(DEP): \
-  $(COMMON_DIR)/evgApp.db \
-  $(COMMON_DIR)/perEVR.db \
-  $(COMMON_DIR)/perEVRevents.db
+  $(COMMON_DIR)/evgApp.db
