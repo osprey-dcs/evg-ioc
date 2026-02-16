@@ -9,3 +9,16 @@ device(longout, INST_IO, devBitTableUpdate, "Bit Table Update")
 device(aai, INST_IO, devBitTableRead, "Bit Table Read")
 # cf. dbior()
 driver(drvBitTable)
+
+# OUT="@log=NAME"
+device(aao, INST_IO, devEventTableInput, "Event Table Input")
+# OUT="@log=NAME
+device(ao, INST_IO, devEventTableSetMult, "Event Table Set Mult")
+# OUT="@log=NAME queue=QNAME"
+device(longout, INST_IO, devEventTableSetEvent, "Event Table Set Code")
+# OUT="@log=NAME queue=QNAME"
+device(longout, INST_IO, devEventTableClear, "Event Table Clear")
+# INP="@log=NAME queue=QNAME"
+device(longin, INST_IO, devEventTableLast, "Event Table Last")
+# INP="@log=NAME queue=QNAME autoclear=true"
+device(aai, INST_IO, devEventTableBuf, "Event Table Buffer")

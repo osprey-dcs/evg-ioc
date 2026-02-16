@@ -1,0 +1,50 @@
+
+record(aao, "$(P)input") {
+    field(FTVL, "ULONG")
+    field(NELM, "256")
+    field(DTYP, "Event Table Input")
+    field(OUT , "@log=$(P)LOG")
+}
+
+record(ao, "$(P)mult") {
+    field(DTYP, "Event Table Set Mult")
+    field(OUT , "@log=$(P)LOG")
+}
+
+record(longout, "$(P)code1") {
+    field(DTYP, "Event Table Set Code")
+    field(OUT , "@log=$(P)LOG queue=EVT1")
+}
+record(longout, "$(P)code2") {
+    field(DTYP, "Event Table Set Code")
+    field(OUT , "@log=$(P)LOG queue=EVT2")
+}
+
+record(longout, "$(P)clear1") {
+    field(DTYP, "Event Table Clear")
+    field(OUT , "@log=$(P)LOG queue=EVT1")
+}
+# omit for EVT2
+
+record(longin, "$(P)last1") {
+    field(DTYP, "Event Table Last")
+    field(INP , "@log=$(P)LOG queue=EVT1")
+    field(SCAN, "I/O Intr")
+    field(TSE , "-2")
+}
+record(longin, "$(P)last2") {
+    field(DTYP, "Event Table Last")
+    field(INP , "@log=$(P)LOG queue=EVT2")
+    field(SCAN, "I/O Intr")
+    field(TSE , "-2")
+}
+
+record(aai, "$(P)buf1") {
+    field(FTVL, "DOUBLE")
+    field(NELM, "256")
+    field(DTYP, "Event Table Buffer")
+    field(INP , "@log=$(P)LOG queue=EVT1")
+    field(SCAN, "I/O Intr")
+    field(TSE , "-2")
+}
+# omit for EVT2

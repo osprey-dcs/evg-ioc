@@ -17,10 +17,13 @@ TESTPROD_IOC += testBitTable
 testBitTable_SRCS += testBitTable.c
 testBitTable_SRCS += testBitTable_registerRecordDeviceDriver.cpp
 
+TESTPROD_IOC += testEventTable
+testEventTable_SRCS += testEventTable.c
+testEventTable_SRCS += testBitTable_registerRecordDeviceDriver.cpp
+
 PROD_LIBS += ospreyTiming
 PROD_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
-
