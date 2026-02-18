@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>EVR out $(P)</name>
-  <width>385</width>
+  <width>465</width>
   <height>30</height>
   <widget type="textupdate" version="2.0.0">
     <name>Label_1</name>
@@ -28,6 +28,7 @@
     <x>205</x>
     <y>5</y>
     <width>90</width>
+    <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_1</name>
@@ -35,5 +36,22 @@
     <x>300</x>
     <y>5</y>
     <width>90</width>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_2</name>
+    <pv_name>$(P)EVR:OUT:$(N):evt1</pv_name>
+    <x>395</x>
+    <y>5</y>
+    <width>30</width>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_3</name>
+    <pv_name>$(P)EVR:OUT:$(N):evt2</pv_name>
+    <x>430</x>
+    <y>5</y>
+    <width>30</width>
+    <horizontal_alignment>2</horizontal_alignment>
   </widget>
 </display>

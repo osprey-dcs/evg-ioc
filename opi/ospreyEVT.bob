@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>EVT $(P)</name>
+  <width>1510</width>
+  <height>590</height>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -32,36 +34,18 @@
     <width>180</width>
     <height>22</height>
     <bitReverse>true</bitReverse>
+    <square>true</square>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_2</name>
     <text>EVG Status</text>
-    <y>77</y>
-  </widget>
-  <widget type="byte_monitor" version="2.0.0">
-    <name>Byte Monitor_1</name>
-    <pv_name>$(P)EVG:status</pv_name>
-    <x>210</x>
-    <y>77</y>
-    <width>90</width>
-    <height>22</height>
-    <numBits>4</numBits>
-    <bitReverse>true</bitReverse>
+    <y>100</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_3</name>
     <text>EVR Status</text>
-    <y>102</y>
-  </widget>
-  <widget type="byte_monitor" version="2.0.0">
-    <name>Byte Monitor_2</name>
-    <pv_name>$(P)EVR:status</pv_name>
     <x>210</x>
-    <y>104</y>
-    <width>470</width>
-    <height>14</height>
-    <numBits>32</numBits>
-    <bitReverse>true</bitReverse>
+    <y>100</y>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Input State</name>
@@ -77,6 +61,7 @@
       <height>160</height>
       <bitReverse>true</bitReverse>
       <horizontal>false</horizontal>
+      <square>true</square>
     </widget>
     <widget type="label" version="2.0.0">
       <name>Label_4</name>
@@ -150,7 +135,7 @@
     <file>_ospreyEVRdelayout.bob</file>
     <x>230</x>
     <y>180</y>
-    <width>385</width>
+    <width>465</width>
     <height>30</height>
     <resize>2</resize>
   </widget>
@@ -162,7 +147,7 @@
     <file>_ospreyEVRdelayout.bob</file>
     <x>230</x>
     <y>210</y>
-    <width>385</width>
+    <width>465</width>
     <height>30</height>
     <resize>2</resize>
   </widget>
@@ -174,7 +159,7 @@
     <file>_ospreyEVRdelayout.bob</file>
     <x>230</x>
     <y>270</y>
-    <width>385</width>
+    <width>465</width>
     <height>30</height>
     <resize>2</resize>
   </widget>
@@ -186,7 +171,7 @@
     <file>_ospreyEVRdelayout.bob</file>
     <x>230</x>
     <y>240</y>
-    <width>385</width>
+    <width>465</width>
     <height>30</height>
     <resize>2</resize>
   </widget>
@@ -198,7 +183,7 @@
     <file>_ospreyEVRdelayout.bob</file>
     <x>230</x>
     <y>300</y>
-    <width>385</width>
+    <width>465</width>
     <height>30</height>
     <resize>2</resize>
   </widget>
@@ -210,7 +195,7 @@
     <file>_ospreyEVRdelayout.bob</file>
     <x>230</x>
     <y>330</y>
-    <width>385</width>
+    <width>465</width>
     <height>30</height>
     <resize>2</resize>
   </widget>
@@ -222,7 +207,7 @@
     <file>_ospreyEVRdelayout.bob</file>
     <x>230</x>
     <y>390</y>
-    <width>385</width>
+    <width>465</width>
     <height>30</height>
     <resize>2</resize>
   </widget>
@@ -234,7 +219,7 @@
     <file>_ospreyEVRdelayout.bob</file>
     <x>230</x>
     <y>360</y>
-    <width>385</width>
+    <width>465</width>
     <height>30</height>
     <resize>2</resize>
   </widget>
@@ -255,14 +240,14 @@
   <widget type="label" version="2.0.0">
     <name>Label_15</name>
     <text>Delay</text>
-    <x>430</x>
+    <x>440</x>
     <y>160</y>
     <width>80</width>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_16</name>
     <text>Width</text>
-    <x>520</x>
+    <x>530</x>
     <y>160</y>
     <width>80</width>
   </widget>
@@ -294,15 +279,15 @@
     <name>Text Update_1</name>
     <pv_name>$(P)EVG:status</pv_name>
     <x>110</x>
-    <y>77</y>
+    <y>100</y>
     <width>90</width>
     <format>4</format>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_2</name>
     <pv_name>$(P)EVR:status</pv_name>
-    <x>110</x>
-    <y>102</y>
+    <x>320</x>
+    <y>100</y>
     <width>90</width>
     <format>4</format>
   </widget>
@@ -383,9 +368,171 @@
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_5</name>
       <pv_name>$(P)APP:IPADDR</pv_name>
-      <x>97</x>
+      <x>92</x>
       <y>92</y>
-      <width>140</width>
+      <width>125</width>
     </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_16</name>
+    <macros>
+      <I>1</I>
+    </macros>
+    <file>_ospreyEVGtimer.bob</file>
+    <x>300</x>
+    <y>510</y>
+    <width>300</width>
+    <height>30</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>Event #s</text>
+    <x>630</x>
+    <y>160</y>
+    <width>70</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>EVT Mode</text>
+    <y>75</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>$(P)FPGA:Mode</pv_name>
+    <x>110</x>
+    <y>75</y>
+    <width>90</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>Pulse</text>
+    <x>440</x>
+    <y>140</y>
+    <width>80</width>
+  </widget>
+  <widget type="table" version="2.0.0">
+    <name>Table</name>
+    <pv_name>pva://$(P)EVR:LOG</pv_name>
+    <x>810</x>
+    <y>160</y>
+    <width>245</width>
+    <height>399</height>
+    <columns>
+      <column>
+        <name>Column 1</name>
+        <width>40</width>
+        <editable>false</editable>
+      </column>
+      <column>
+        <name>Column 2</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+      <column>
+        <name>Column 3</name>
+        <width>100</width>
+        <editable>true</editable>
+      </column>
+    </columns>
+    <editable>false</editable>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>$(P)EVR:LOG:evt1</pv_name>
+    <x>810</x>
+    <y>102</y>
+    <width>40</width>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_1</name>
+    <pv_name>$(P)EVR:LOG:evt2</pv_name>
+    <x>860</x>
+    <y>102</y>
+    <width>40</width>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_2</name>
+    <pv_name>$(P)EVR:LOG:evt3</pv_name>
+    <x>910</x>
+    <y>102</y>
+    <width>40</width>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_3</name>
+    <pv_name>$(P)EVR:LOG:evt4</pv_name>
+    <x>960</x>
+    <y>102</y>
+    <width>40</width>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_4</name>
+    <pv_name>$(P)EVR:LOG:evt5</pv_name>
+    <x>1010</x>
+    <y>102</y>
+    <width>40</width>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_22</name>
+    <text>Event RX Log</text>
+    <x>810</x>
+    <y>72</y>
+    <width>110</width>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>$(P)EVR:LOG:E.SCAN</pv_name>
+    <x>940</x>
+    <y>72</y>
+    <width>110</width>
+    <height>20</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_7</name>
+    <pv_name>$(P)EVR:now</pv_name>
+    <x>420</x>
+    <y>100</y>
+    <width>200</width>
+    <format>4</format>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_8</name>
+    <pv_name>$(P)EVR:LOG:cnt1</pv_name>
+    <x>810</x>
+    <y>127</y>
+    <width>40</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_9</name>
+    <pv_name>$(P)EVR:LOG:cnt2</pv_name>
+    <x>860</x>
+    <y>127</y>
+    <width>40</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_10</name>
+    <pv_name>$(P)EVR:LOG:cnt3</pv_name>
+    <x>910</x>
+    <y>127</y>
+    <width>40</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_11</name>
+    <pv_name>$(P)EVR:LOG:cnt4</pv_name>
+    <x>960</x>
+    <y>127</y>
+    <width>40</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_12</name>
+    <pv_name>$(P)EVR:LOG:cnt5</pv_name>
+    <x>1010</x>
+    <y>127</y>
+    <width>40</width>
   </widget>
 </display>

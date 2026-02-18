@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>EVG timer $(P).$(I)</name>
+  <width>300</width>
+  <height>30</height>
+  <widget type="textupdate" version="2.0.0">
+    <name>Label_1</name>
+    <pv_name>$(P)EVG:TMR:$(I):event.DESC</pv_name>
+    <x>5</x>
+    <y>5</y>
+    <background_color>
+      <color name="Background" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>$(P)EVG:TMR:$(I):event</pv_name>
+    <x>110</x>
+    <y>5</y>
+    <width>90</width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_1</name>
+    <pv_name>$(P)EVG:TMR:$(I):divisor</pv_name>
+    <x>205</x>
+    <y>5</y>
+    <width>90</width>
+  </widget>
+</display>

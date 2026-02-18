@@ -18,7 +18,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
-    <text>The top level OPI file for an EVT chassis is "ospreyEVT.bob", which has a single undefined macro $(P)
+    <text>The top level OPI file for an EVT chassis is "ospreyEVT.bob", which has a single undefined macro \$(P)
 The example below defined P="$(P)"</text>
     <x>20</x>
     <y>10</y>
