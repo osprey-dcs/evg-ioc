@@ -90,7 +90,7 @@ struct EventQueue {
 
     uint32_t nLimit=0u;
     uint8_t event=0u;
-    unsigned changing=false; // onChange scan priorities in progress, for rate limiting
+    unsigned changing=0u; // onChange scan priority mask in progress, for rate limiting
 
     static
     void onChangeComplete(void *usr, IOSCANPVT, int prio) noexcept;
