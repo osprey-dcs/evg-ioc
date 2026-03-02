@@ -18,7 +18,7 @@ git clone --branch 7.0 https://github.com/epics-base/epics-base
 git clone --branch master https://github.com/epics-base/pvxs
 git clone --branch master https://github.com/epics-modules/autosave
 git clone --branch master https://github.com/osprey-dcs/feed-core
-git clone --branch master https://github.com/osprey-dcs/evg-ioc
+git clone --branch master https://github.com/osprey-dcs/timing-ioc
 
 cat <<EOF > pvxs/configure/RELEASE.local
 EPICS_BASE=\$(TOP)/../epics-base
@@ -32,7 +32,7 @@ cat <<EOF > autosave/configure/RELEASE.local
 EPICS_BASE=\$(TOP)/../epics-base
 EOF
 
-cat <<EOF > evg-ioc/configure/RELEASE.local
+cat <<EOF > timing-ioc/configure/RELEASE.local
 AUTOSAVE=\$(TOP)/../autosave
 PVXS=\$(TOP)/../pvxs
 FEED_CORE=\$(TOP)/../feed-core
@@ -43,13 +43,13 @@ make -C epics-base
 make -C pvxs
 make -C autosave
 make -C feed-core
-make -C evg-ioc
+make -C timing-ioc
 ```
 
 ## Running
 
 ```sh
-cd evg-ioc/iocBoot/iocEVT/
+cd timing-ioc/iocBoot/iocEVT/
 
 EVT_IPADDR=1.2.3.4 ./st.cmd
 ```
