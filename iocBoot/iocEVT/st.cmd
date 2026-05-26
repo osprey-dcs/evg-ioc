@@ -1,7 +1,7 @@
 #!../../bin/linux-x86_64/ospreyTimingIoc
 
 epicsEnvSet(EVT_IPADDR, "$(EVT_IPADDR=127.0.0.1)")
-epicsEnvSet("P", "EVT:")
+epicsEnvSet("P", "$(EVT_PREFIX=EVT:)")
 
 ## Register all support components
 dbLoadDatabase "../../dbd/ospreyTimingIoc.dbd"
