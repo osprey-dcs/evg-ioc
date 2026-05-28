@@ -40,12 +40,16 @@ record(calc, "$(P)Ref:TN_") {
     field(CALC, "A*B")
 }
 
-record(bo, "$(P)Marble:PPS:Local") {
-    field(DESC, "Enable/Disable local PPS marker")
+record(mbbo, "$(P)Marble:PPS:Local") {
+    field(DESC, "local PPS marker source")
     field(DTYP, "FEED Register Write")
     field(OUT,  "@name=$(NAME) reg=MARBLE:PPS:LOCAL:CSR")
-    field(ZNAM, "Disable")
-    field(ONAM, "Enable")
+    field(ZRVL, "0")
+    field(ZRST, "Hardware")
+    field(ONVL, "1")
+    field(ONST, "System")
+    field(TWVL, "2")
+    field(TWST, "VCXO20")
 }
 record(mbbo, "$(P)Marble:MGTCLK0") {
     field(DESC, "Set MGTCLK0 source")
