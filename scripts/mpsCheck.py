@@ -12,9 +12,9 @@ parser = argparse.ArgumentParser(description='Test MPS', \
                  are correct.  If not you'll likely get compaints about the
                  hardware output being asserted or not asserted incorrectly.""")
 parser.add_argument('-e', '--evg', default='EVG:', help='EVG PV name prefix')
-parser.add_argument('-i', '--inputs', default=8, choices=range(1,9), help='Number of MPS inputs')
+parser.add_argument('-i', '--inputs', default=8, type=int, choices=range(1,9), help='Number of MPS inputs')
 parser.add_argument('-m', '--hw', action='store_true', help='Check MPS mitigation hardware outputs')
-parser.add_argument('-o', '--output', default=1, choices=range(1,9), help='MPS output number')
+parser.add_argument('-o', '--output', default=1, type=int, choices=range(1,9), help='MPS output number')
 parser.add_argument('-r', '--evr', default='EVR:1:', help='EVR PV name prefix')
 parser.add_argument('-v', '--verbose', action='store_true', help='Show channel access actions')
 args = parser.parse_args()
